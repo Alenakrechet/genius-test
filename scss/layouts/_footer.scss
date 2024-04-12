@@ -6,28 +6,46 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 
   &::before,
   &::after {
     position: absolute;
     content: "";
-    bottom: 0;
+
     background-repeat: no-repeat;
     z-index: 0;
   }
 
   &::before {
-    background-image: url("../images/decor-bread-small.png");
+    background-image: url("../images/footer-bread-left.png");
     width: 180px;
-    height: 120px;
+    height: 180px;
+    bottom: 335px;
     left: 0;
+
+    @media screen and (min-width: $bp-tablet) {
+      background-image: url("../images/decor-bread-small.png");
+      height: 120px;
+      bottom: 0;
+    }
   }
 
   &::after {
     background-image: url("../images/decor-bread-large.png");
-    width: 380px;
+    width: 275px;
     height: 190px;
-    right: 0;
+    right: -110px;
+    bottom: -40px;
+
+    background-size: 80% 80%;
+
+    @media screen and (min-width: $bp-tablet) {
+      background-size: 100%;
+      width: 380px;
+      right: 0;
+      bottom: 0;
+    }
   }
 
   &__container {
